@@ -22,7 +22,7 @@ plt.rcParams.update({'font.size': 18})
 T = 89
 # density
 rho = -0.00615 * T + 1.928
-print('calculated density is %.03f [g/cm^3]'%rho)
+print 'calculated density is %.03f [g/cm^3]'%rho
 rho = 1.383
 
 fRecombA  = 0.8 # +- 0.003
@@ -45,7 +45,7 @@ def RecombBirks(dEdx, A=fRecombA, k=fRecombk, Efield=Enominal):
     return 1-1/r
 
 
-print('R @ 2.1 MeV/cm : %.04f'%RecombModBox(2.1,fModBoxA,fModBoxB,Enominal))
+print 'R @ 2.1 MeV/cm : %.04f'%RecombModBox(2.1,fModBoxA,fModBoxB,Enominal)
 
 RecombModBox_v = np.vectorize(RecombModBox)
 RecombBirks_v  = np.vectorize(RecombBirks)
@@ -81,4 +81,3 @@ plt.xlabel('dE/dx [MeV/cm]',fontweight='bold',fontsize=18)
 plt.ylabel('Recombination Factor $R$',fontweight='bold',fontsize=18)
 plt.legend(loc=4)
 plt.show()
-
